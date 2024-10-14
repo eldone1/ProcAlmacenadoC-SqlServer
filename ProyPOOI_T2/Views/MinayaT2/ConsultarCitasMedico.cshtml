@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProyPOOI_T2.Models.Sp_ListarCitasPorAnio>
+
+@{
+    ViewBag.Title = "ConsultarCitasMedico";
+}
+
+<h2>ConsultarCitasMedico</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoPaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreMedico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroCita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoPaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreMedico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    <h4><strong>Cantidad de citas: @ViewBag.cont</strong></h4>
+</div>
